@@ -6,12 +6,35 @@ let modalContent = document.querySelector(".modalInnerText")
 let span = document.querySelector("span")
 let originalTitleText = document.querySelector(".originalTitleText")
 let director = document.querySelector(".director")
+let scrolling = document.querySelectorAll(".scroll-button")
+let leftScroll = document.querySelector("#left")
+let rightScroll = document.querySelector("#right")
 
-// let righButton = document.getElementById("button");
-// let leftButton = document.getElementById("button");
 
+rightScroll.onclick = function () {
+  let container = document.querySelector("#banner-container")
+  sideScroll(container,'right',50,200,10)
+}
 
+leftScroll.onclick = function () {
+  let container = document.querySelector("#banner-container")
+  sideScroll(container,'left',50,200,10);
+}
 
+function sideScroll(element,direction,speed,distance,step){
+  scrollAmount = 0;
+  var slideTimer = setInterval(function(){
+      if(direction == 'left'){
+          element.scrollLeft -= step;
+      } else {
+          element.scrollLeft += step;
+      }
+      scrollAmount += step;
+      if(scrollAmount >= distance){
+          window.clearInterval(slideTimer);
+      }
+  }, speed);
+}
 
 
 fetch('https://ghibliapi.herokuapp.com/films')
@@ -58,7 +81,7 @@ console.log(movieData)
   })
 }
  
-
+  
 
 
 // add function where once a poster is clicked it a
