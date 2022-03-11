@@ -2,17 +2,18 @@
   border: 1px solid red;
 } */
 
-
-
 body {
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas: 
-  header
-  main
-  footer;
+  grid-template-areas:
+    header
+    main
+    footer;
   z-index: -1;
   flex-direction: column;
+  /* background-color: #e5e9cf; */
+  background: url("wp5393061.jpeg");
+  background-size: cover;
 }
 header {
   display: flex;
@@ -21,10 +22,12 @@ header {
 }
 .toptitle {
   grid-area: header;
+  border: 1px;
   text-align: center;
-  font-family: "ABeeZee", sans-serif;
-  font-size: 2.2rem;
+  font-family: "Kanit", sans-serif;
+  font-size: 3rem;
   margin-bottom: 3rem;
+  color: #f8fcff;
 }
 
 #banner-container {
@@ -45,7 +48,7 @@ header {
   justify-content: center;
   align-items: center;
   background: black;
-  opacity: .5;
+  opacity: 0.5;
 
   color: white;
   width: 5vw;
@@ -78,7 +81,8 @@ header {
 .modal-content {
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20% auto;
-  padding: 20px;
+  margin-bottom: 15rem;
+  padding: 30px;
   border: 1px solid rgb(51, 51, 51);
   border-radius: 15%;
   width: 80%;
