@@ -13,12 +13,12 @@ let rightScroll = document.querySelector("#right")
 
 rightScroll.onclick = function () {
   let container = document.querySelector("#banner-container")
-  sideScroll(container,'right',25,300,10)
+  sideScroll(container,'right',45,500,60)
 }
 
 leftScroll.onclick = function () {
   let container = document.querySelector("#banner-container")
-  sideScroll(container,'left',25,300,10);
+  sideScroll(container,'left',45,500,60);
 }
 
 function sideScroll(element,direction,speed,distance,step){
