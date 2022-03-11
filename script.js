@@ -4,6 +4,15 @@ let bannerContainer = document.querySelector("#banner-container")
 let modal = document.querySelector(".modal")
 let modalContent = document.querySelector(".modalInnerText")
 let span = document.querySelector("span")
+let originalTitleText = document.querySelector(".originalTitleText")
+let director = document.querySelector(".director")
+
+// let righButton = document.getElementById("button");
+// let leftButton = document.getElementById("button");
+
+
+
+
 
 fetch('https://ghibliapi.herokuapp.com/films')
   .then(response => response.json())
@@ -17,23 +26,23 @@ console.log(movieData)
   movieData.forEach((movie) => {
       const cardInfo = `
         <div class="movieBanner">
-        <button class="movieButton">
           <img src="${movie.image}"/ name="${movie.id}">
-        </button>
         </div>
       `
       bannerContainer.insertAdjacentHTML('beforeend', cardInfo)
   })
   
-  let movieButtons = document.querySelectorAll(".movieButton")
+  let movieBanner = document.querySelectorAll(".movieBanner")
 
-  movieButtons.forEach((movieButton) => {
+  movieBanner.forEach((movieButton) => {
     movieButton.addEventListener('click', (e) => {
       let movieFound = movieData.find((movie) => {
         return movie.id === e.target.name
       })
 
       modalContent.textContent = movieFound.description
+      originalTitleText.textContent =` Title:  ${ movieFound.original_title }`                  
+      director.textContent = `Director: ${movieFound.director}`
       modal.style.display = "block"
 
       span.onclick = function () {
@@ -60,3 +69,12 @@ console.log(movieData)
 // create another div inside of class modal div to hold modal content
 //create <p> inside to hold content
 // create <span> to be able to close modal
+
+
+
+
+//create buttons and style
+
+//set default display none
+
+// when content loads make buttons visible

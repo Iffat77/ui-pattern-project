@@ -6,22 +6,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ghibli Project</title>
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Redressed&display=swap" rel="stylesheet">
     </head>
     <body>
+      <header>
       <h1 class="toptitle">Studio Ghibli Film Collection </h1>
-     
-      <div id="banner-container"></div>
+      </header> 
 
-      <!-- Modal Section -->
+    
+    
+    <div id="banner-container"> 
+      <div class="button-holder">
+        <div class="scroll-button" id="left">
+          &#60;
+        </div>
+  
+        <div class="scroll-button" id="right">
+          >
+        </div>
+
+      </div>
+
+    </div>
+  
+  
+    <!-- Modal Section -->
     <section id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
+        <p class="originalTitleText"></p>
+        <p class="director"></p>
         <p class="modalInnerText"></p>
       </div>
     </section>
 
       <script src="./script.js"></script>
     </body>
+    <footer>
+
+    </footer>
 </html>
 
 
