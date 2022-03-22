@@ -37,10 +37,12 @@ header {
   column-gap: 10px;
   height: 450px;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 .movieBanner {
   display: flex;
+  scroll-behavior: smooth;
 }
 
 .scroll-button {
@@ -55,6 +57,7 @@ header {
   height: 5vw;
   cursor: pointer;
   border-radius: 100%;
+  
 }
 .button-holder {
   align-self: center;
