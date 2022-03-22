@@ -1,8 +1,7 @@
 # <strong> [Studio Ghibli Film Collection](https://iffat77.github.io/ui-pattern-project/)</strong>
 
 ![Wireframe](https://res.cloudinary.com/dsk8h1adc/image/upload/v1647908989/Screen_Shot_2022-03-21_at_8.19.24_PM_hzgtap.png)
-<br>
-<br>
+
 
 # Project Overview
 
