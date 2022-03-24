@@ -1,5 +1,4 @@
-// iterate through the array creating divs with loop
-// use loop to create poster and information
+
 let bannerContainer = document.querySelector("#banner-container")
 let modal = document.querySelector(".modal")
 let modalContent = document.querySelector(".modalInnerText")
@@ -10,7 +9,7 @@ let scrolling = document.querySelectorAll(".scroll-button")
 let leftScroll = document.querySelector("#left")
 let rightScroll = document.querySelector("#right")
 
-
+// scroll funtion for horizontal scrolling of banner cont
 rightScroll.onclick = function () {
   let container = document.querySelector("#banner-container")
   sideScroll(container,'right',45,800,60)
@@ -37,14 +36,14 @@ function sideScroll(element,direction,speed,distance,step){
   
 }
 
-
+// grabbing data from api
 fetch('https://ghibliapi.herokuapp.com/films')
   .then(response => response.json())
   .then(data => {
     renderResults(data)
   })
     
-
+// function to iretate through every movie image and id and assign it to card info and then insert it into the banner container
 function renderResults(movieData) {
 console.log(movieData)
   movieData.forEach((movie) => {
@@ -57,18 +56,18 @@ console.log(movieData)
   })
   
   let movieBanner = document.querySelectorAll(".movieBanner")
-
+  // iteration thgough each movie adding an eventlistener and when clicked returns specific movie id value to movieFound
   movieBanner.forEach((movieButton) => {
     movieButton.addEventListener('click', (e) => {
       let movieFound = movieData.find((movie) => {
         return movie.id === e.target.name
       })
-
+  // using the movieFound to to match appropiate movie 
       modalContent.textContent = movieFound.description
       originalTitleText.textContent =` Title:  ${ movieFound.original_title }`                  
       director.textContent = `Director: ${movieFound.director}`
       modal.style.display = "block"
-
+  
       span.onclick = function () {
         modal.style.display = "none";
       };
@@ -84,21 +83,3 @@ console.log(movieData)
  
   
 
-
-// add function where once a poster is clicked it a
-// box should appear in the center of the screen with 
-// the details for the item that the user clicks on
-
-// create div with class modal
-// create another div inside of class modal div to hold modal content
-//create <p> inside to hold content
-// create <span> to be able to close modal
-
-
-
-
-//create buttons and style
-
-//set default display none
-
-// when content loads make buttons visible
